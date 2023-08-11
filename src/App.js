@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from "./component/Home";
+import Info from "./component/Info";
+import User from "./component/User";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      {/* 쿼리스트링 써봄 */}     
+       <Route path="/user" element={<User/>} />
+      {/* 쿼리 파라미터 - 추가설정 */}
+      <Route path="/info/:a/:b" element={<Info/>} />
+      
+    </Routes>
+
   );
 }
 
